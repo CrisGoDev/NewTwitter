@@ -1,0 +1,447 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no" />
+  <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.8.2/css/all.min.css"
+    integrity="sha384-oS3vJWv+0UjzBfQzYUhtDYW+Pj2yciDJxpsK1OYPAYjqT085Qq/1cq5FLXAZQ7Ay" crossorigin="anonymous" />
+  <link href="https://fonts.googleapis.com/css?family=Josefin+Sans:300,400,600,700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="estilos.css" />
+  <title>Twitter</title>
+</head>
+
+<body>
+  <!-- main page -->
+  <section class="main-page">
+    <!-- left -->
+    <div class="left">
+      <div class="left-content">
+        <div>
+          <i class="fas fa-search"></i>
+          <h3 class="left-content-heading">Encuentra tus intereses</h3>
+        </div>
+        <div>
+          <i class="fas fa-user-friends"></i>
+          <h3 class="left-content-heading">
+            Explore de qué habla la gente
+          </h3>
+        </div>
+        <div>
+          <i class="fas fa-comment"></i>
+          <h3 class="left-content-heading">Únete a la gente</h3>
+        </div>
+      </div>
+    </div>
+    <!-- end of left -->
+    <!-- right -->
+    <div class="right">
+      <form class="right-content-form">
+        <input type="text" class="user-info" placeholder="Teléfono, email,  usuario" />
+        <div>
+          <input type="password" class="password" placeholder="contraseña" />
+          <label>¿Has olvidado tu contraseña?</label>
+        </div>
+        <button type="button" class="btn-top">Iniciar sesión</button>
+      </form>
+      <div class="middle-content">
+        <i class="fab fa-twitter"></i>
+        <h1>Explore lo que está pasando en el mundo</h1>
+        <h4>
+          Únete a Twitter hoy</h4>
+        <button type="button" class="sign-up main-btn">Registrate</button>
+        <button type="button" class="log-in main-btn">Iniciar sesión</button>
+      </div>
+    </div>
+    <!-- end of right -->
+    <!-- footer -->
+    <footer class="main-page-footer">
+      <ul>
+        <li><a href="#">Acerca de</a></li>
+        <li><a href="#">Blog</a></li>
+        <li><a href="#">Ayuda</a></li>
+        <li><a href="#">Condiciones</a></li>
+        <li><a href="#">Aplicaciones</a></li>
+        <li><a href="#">Ajustes</a></li>
+        <li><a href="#">Contacto</a></li>
+        <li><a href="#">Estado</a></li>
+        <li><a href="#">Política de privacidad</a></li>
+        <li><a href="#">Marca</a></li>
+        <li><a href="#">Desarrolladores</a></li>
+        <li><a href="#">&copy; 2019 Twitter</a></li>
+      </ul>
+    </footer>
+    <!-- end of footer -->
+  </section>
+  <!-- end of main page -->
+
+  <!-- login page -->
+  <section class="login-page">
+    <!-- login page nav -->
+    <nav class="login-page-nav">
+      <ul>
+        <li class="brand">
+          <a href="#"><i class="fab fa-twitter"></i> Home</a>
+        </li>
+        <li><a href="#">Acerca de</a></li>
+        <li><a href="#">Idioma: Español</a></li>
+      </ul>
+    </nav>
+    <!-- end of login page nav -->
+    <!-- login -->
+    <div class="login">
+      <div class="login-content">
+        <h2>Iniciar sesión en Twitter</h2>
+        <form class="login-form">
+          <input type="text" placeholder="Teléfono, email, usuario" class="login-user-info" />
+          <input type="password" placeholder="contraseña" class="login-password" />
+          <div>
+            <button type="button" class="login-form-btn">Iniciar sesión</button>
+            <input type="checkbox" class="login-form-checkbox" id="check" />
+            <label for="check">Recordar</label>
+            <a href="#">¿Se te olvidó tu contraseña?</a>
+          </div>
+        </form>
+      </div>
+      <footer class="login-footer">
+        <p>Nuevo en Twitter? <a href="#">Regístrate ahora</a></p>
+        <p>
+          ¿Ya estás usando Twitter por mensaje de texto?
+          <a href="#">Activa tu cuenta</a>
+        </p>
+      </footer>
+    </div>
+    <!-- end of login -->
+
+    <!-- login modal -->
+    <div class="login-modal">
+      <i class="fas fa-times"></i>
+      <p>
+        El nombre de usuario y la contraseña que ingresó no coinciden con nuestros registros.
+        Vuelve a comprobarlo e inténtalo de nuevo.
+      </p>
+    </div>
+    <!-- end of login modal -->
+  </section>
+  <!-- end of login page -->
+
+  <!-- feeds page -->
+  <section class="feeds-page">
+    <!-- feeds nav -->
+    <nav class="feeds-nav dark-mode-1">
+      <div class="icons">
+        <a href="#" class="active"><i class="fas fa-home"></i></a>
+        <a href="#"><i class="fas fa-hashtag"></i></a>
+        <a href="#"><i class="far fa-bell"></i></a>
+        <a href="#"><i class="far fa-envelope"></i></a>
+      </div>
+      <div class="search-bar">
+        <i class="fas fa-search"></i>
+        <input type="text" placeholder="Search Twirrer" class="search-bar-input dark-mode-2 light-text border" />
+      </div>
+      <div class="user">
+        <div class="user-img-wrapper">
+          <img src="imagenes/usuario1.jpg" />
+        </div>
+        <a href="#" class="user-link light-text">Jane Suares</a>
+        <i class="fas fa-chevron-down"></i>
+      </div>
+    </nav>
+    <!-- end of feeds nav -->
+
+    <!-- feeds content -->
+    <div class="feeds-content dark-mode-2">
+      <div class="feeds-header dark-mode-1">
+        <div class="header-top border">
+          <h4 class="light-text">Home</h4>
+          <i class="far fa-star"></i>
+        </div>
+        <div class="header-post dark-mode-1 border">
+          <div class="header-img-wrapper">
+            <img src="imagenes/usuario1.jpg" />
+          </div>
+          <input type="text" placeholder="What's happening?" class="dark-mode-2 light-text border" />
+          <i class="far fa-image"></i>
+          <i class="fas fa-camera"></i>
+          <i class="far fa-chart-bar"></i>
+        </div>
+      </div>
+
+      <div class="posts dark-mode-1">
+        <div class="post border">
+          <div class="user-avatar">
+            <img src="imagenes/usuario2.jpg" />
+          </div>
+          <div class="post-content">
+            <div class="post-user-info light-text">
+              <h4>Helen Brenes</h4>
+              <i class="fas fa-check-circle"></i>
+              <span>@helenbrenes 15m</span>
+            </div>
+            <p class="post-text light-text">
+              Lorem ipsum dolor sit amet, consectetur adipisicing elit.
+              Voluptates et voluptatibus vel tenetur quos, id omnis sed error
+              fuga necessitatibus.
+            </p>
+            <div class="post-img">
+              <img src="imagenes/imagen1.jpg" />
+            </div>
+            <div class="post-icons">
+              <i class="far fa-comment"></i>
+              <i class="fas fa-retweet"></i>
+              <i class="far fa-heart"></i>
+              <i class="fas fa-share-alt"></i>
+            </div>
+          </div>
+        </div>
+        <div class="post border">
+          <div class="user-avatar">
+            <img src="imagenes/usuario3.jpg" />
+          </div>
+          <div class="post-content">
+            <div class="post-user-info light-text">
+              <h4>Jane Mendez</h4>
+              <i class="fas fa-check-circle"></i>
+              <span>@janemendes 35m</span>
+            </div>
+            <p class="post-text light-text">
+              Lorem ipsum dolor sit amet, consectetur adipisicing elit.
+              Voluptates et voluptatibus vel tenetur quos, id omnis sed error
+              fuga necessitatibus.
+            </p>
+            <div class="post-img">
+              <img src="imagenes/imagen2.jpeg" />
+            </div>
+            <div class="post-icons">
+              <i class="far fa-comment"></i>
+              <i class="fas fa-retweet"></i>
+              <i class="far fa-heart"></i>
+              <i class="fas fa-share-alt"></i>
+            </div>
+          </div>
+        </div>
+        <div class="post border">
+          <div class="user-avatar">
+            <img src="imagenes/usuario4.jpg" />
+          </div>
+          <div class="post-content">
+            <div class="post-user-info light-text">
+              <h4>Jony Torres</h4>
+              <i class="fas fa-check-circle"></i>
+              <span>@jonytorres 56m</span>
+            </div>
+            <p class="post-text light-text">
+              Lorem ipsum dolor sit amet, consectetur adipisicing elit.
+              Voluptates et voluptatibus vel tenetur quos, id omnis sed error
+              fuga necessitatibus.
+            </p>
+            <div class="post-img">
+              <img src="imagenes/imagen3.jpg" />
+            </div>
+            <div class="post-icons">
+              <i class="far fa-comment"></i>
+              <i class="fas fa-retweet"></i>
+              <i class="far fa-heart"></i>
+              <i class="fas fa-share-alt"></i>
+            </div>
+          </div>
+        </div>
+        <div class="post border">
+          <div class="user-avatar">
+            <img src="imagenes/usuario5.jpg" />
+          </div>
+          <div class="post-content">
+            <div class="post-user-info light-text">
+              <h4>Jaime Dias</h4>
+              <i class="fas fa-check-circle"></i>
+              <span>@jaimedias 1h 07m</span>
+            </div>
+            <p class="post-text light-text">
+              Lorem ipsum dolor sit amet, consectetur adipisicing elit.
+              Voluptates et voluptatibus vel tenetur quos, id omnis sed error
+              fuga necessitatibus.
+            </p>
+            <div class="post-img">
+              <img src="imagenes/imagen4.jpg" />
+            </div>
+            <div class="post-icons">
+              <i class="far fa-comment"></i>
+              <i class="fas fa-retweet"></i>
+              <i class="far fa-heart"></i>
+              <i class="fas fa-share-alt"></i>
+            </div>
+          </div>
+        </div>
+        <div class="post border">
+          <div class="user-avatar">
+            <img src="imagenes/usuario6.jpg" />
+          </div>
+          <div class="post-content">
+            <div class="post-user-info light-text">
+              <h4>Nico Paz</h4>
+              <i class="fas fa-check-circle"></i>
+              <span>@nicopaz 1h 37m</span>
+            </div>
+            <p class="post-text light-text">
+              Lorem ipsum dolor sit amet, consectetur adipisicing elit.
+              Voluptates et voluptatibus vel tenetur quos, id omnis sed error
+              fuga necessitatibus.
+            </p>
+            <div class="post-img">
+              <img src="imagenes/imagen5.jpg" />
+            </div>
+            <div class="post-icons">
+              <i class="far fa-comment"></i>
+              <i class="fas fa-retweet"></i>
+              <i class="far fa-heart"></i>
+              <i class="fas fa-share-alt"></i>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="follow dark-mode-1">
+        <h3 class="follow-heading light-text border">A quién seguir</h3>
+        <div class="follow-user border">
+          <div class="follow-user-img">
+            <img src="imagenes/usuario3.jpg" />
+          </div>
+          <div class="follow-user-info light-text">
+            <h4>Ana lopez</h4>
+            <p>@analopez</p>
+          </div>
+          <button type="button" class="follow-btn dark-mode-2">Seguir</button>
+        </div>
+        <div class="follow-user border">
+          <div class="follow-user-img">
+            <img src="imagenes/usuario4.jpg" />
+          </div>
+          <div class="follow-user-info light-text">
+            <h4>juan lui</h4>
+            <p>@juanlui</p>
+          </div>
+          <button type="button" class="follow-btn dark-mode-2">Seguir</button>
+        </div>
+        <div class="follow-user border">
+          <div class="follow-user-img">
+            <img src="imagenes/usuario5.jpg" />
+          </div>
+          <div class="follow-user-info light-text">
+            <h4>Julio Paz</h4>
+            <p>@jaliopaz</p>
+          </div>
+          <button type="button" class="follow-btn dark-mode-2">Seguir</button>
+        </div>
+        <div class="follow-link">
+          <a href="#">Mostrar más</a>
+        </div>
+        <footer class="follow-footer dark-mode-2">
+          <ul>
+            <li><a href="#">Condiciones</a></li>
+            <li><a href="#">Política de privacidad</a></li>
+            <li><a href="#">Cookies</a></li>
+            <li><a href="#">Acerca de</a></li>
+            <li><a href="#">Más</a></li>
+          </ul>
+        </footer>
+      </div>
+    </div>
+    <!-- end of feeds content -->
+
+    <button type="button" class="post-btn">
+      +<i class="fas fa-feather-alt"></i> Post
+    </button>
+
+    <!-- post modal -->
+    <div class="modal-wrapper">
+      <div class="modal dark-mode-1">
+        <div class="modal-header border">
+          <i class="fas fa-times"></i>
+          <button type="button">Post</button>
+        </div>
+        <div class="modal-body">
+          <div class="modal-img">
+            <img src="imagenes/usuario1.jpg" />
+          </div>
+          <input type="text" placeholder="What's happening?" class="modal-input dark-mode-2 light-text border" />
+          <i class="far fa-smile"></i>
+        </div>
+        <div class="modal-footer">
+          <div class="modal-icons">
+            <i class="far fa-image"></i>
+            <i class="fas fa-camera"></i>
+            <i class="far fa-chart-bar"></i>
+            <span>+</span>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- end of post modal -->
+
+    <!-- sidebar -->
+    <div class="sidebar-wrapper">
+      <div class="sidebar dark-mode-1">
+        <div class="sidebar-header border">
+          <h2 class="light-text">Informacion de cuenta</h2>
+          <i class="fas fa-times"></i>
+        </div>
+        <div class="sidebar-user">
+          <div class="sidebar-user-img">
+            <img src="imagenes/usuario1.jpg" />
+          </div>
+          <span>+</span>
+        </div>
+        <div class="sidebar-user-info light-text">
+          <h4>Jane Suares</h4>
+          <p>@janesuares</p>
+        </div>
+        <div class="following light-text">
+          <p class="following-paragraph"><span>711</span> Siguiendo</p>
+          <p class="following-paragraph"><span>7.5K</span> Seguidores</p>
+        </div>
+        <div class="sidebar-list-1 border">
+          <ul>
+            <li>
+              <a href="#"> <i class="fas fa-user"></i> Perfil </a>
+            </li>
+            <li>
+              <a href="#"> <i class="far fa-list-alt"></i> Listas </a>
+            </li>
+            <li>
+              <a href="#"> <i class="far fa-bookmark"></i> Marcadores </a>
+            </li>
+            <li>
+              <a href="#"> <i class="fab fa-adversal"></i> Anuncios </a>
+            </li>
+            <li>
+              <a href="#"> <i class="fas fa-chart-line"></i> Analytics </a>
+            </li>
+          </ul>
+        </div>
+        <div class="sidebar-list-2">
+          <ul>
+            <li><a href="#">Configuración y privacidad</a></li>
+            <li><a href="#">Centro de ayuda</a></li>
+            <li><a href="#">Cerrar sesión</a></li>
+          </ul>
+        </div>
+
+        <!-- dark mode -->
+        <div class="dark-mode">
+          <p>Modo Oscuro</p>
+          <div class="toggle">
+            <div class="circle"></div>
+          </div>
+        </div>
+        <!-- end of dark mode -->
+      </div>
+    </div>
+    <!-- end of sidebar -->
+  </section>
+  <!-- end of feeds page -->
+
+  <script src="script.js"></script>
+</body>
+
+</html>
