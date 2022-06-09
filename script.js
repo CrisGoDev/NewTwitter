@@ -21,6 +21,8 @@ const xBtn = document.querySelector(".sidebar-header i");
 const toggle = document.querySelector(".toggle");
 const circle = document.querySelector(".circle");
 const carritoAlbendazol= document.querySelector("#albendazol");
+const carritoAlbendazolmenos=document.querySelector("#resta");
+const $carripoMedicamentos=document.querySelectorAll(".item-catalogo");
 /**************************************/
 /**************************************/
 
@@ -134,11 +136,250 @@ toggle.addEventListener("click", () => {
   Array.from(borders).map((border) => border.classList.toggle("border-color"));
 });
 
-carritoAlbendazol.addEventListener("click",()=>{
 
-	let i=4;
+
+function incrementar($contador,precio,$total){
+
+	let i=($contador.textContent);
 	i++;
-	carritoAlbendazol.textContent=i;
-	console.log(i+"wefw")
-});
+	$contador.textContent=i;	
+  
+  let totalCarrito=0;
+  totalCarrito=Math.abs($total.textContent)+Math.abs(precio);  
+  $total.textContent=(totalCarrito);
+}
 
+function disminuir($contador,precio,$total){
+	let i=($contador.textContent);
+	i--;
+	$contador.textContent=i;	
+  let totalCarrito=0;
+  totalCarrito=Math.abs($total.textContent)-Math.abs(precio);  
+  $total.textContent=(totalCarrito);
+}
+
+
+
+// document.addEventListener("DOMContentLoaded",(e)=>{
+  
+// })
+
+
+  const $medicamentosEnElCarrito=document.querySelectorAll(".agregarAlCarrito");
+  let contador=0;
+
+  for(let i=0;i<$carripoMedicamentos.length;i++){
+    $carripoMedicamentos[i].addEventListener("click",(e)=>{
+      
+      const $nombreMeidcamento=document.querySelectorAll(".item-catalogo span:nth-of-type(1)")[i].textContent;
+      const $precioMedicamento=document.querySelectorAll(".item-catalogo h2 p")[i].textContent;
+      const $listaDelCarrito=document.querySelectorAll(".medicamento div:nth-of-type(2) h4");
+      let validacion=false;
+      // console.log($listaDelCarrito);
+      if(e.target.classList.contains('agregarAlCarrito')){
+        // alert("tambien funciona");
+        for(let y=0;y<$listaDelCarrito.length;y++){
+          if($listaDelCarrito[y].textContent===$nombreMeidcamento){
+            incrementar(document.querySelectorAll(".medicamento div:nth-of-type(2) span")[y],$precioMedicamento,
+            document.querySelector(".carritoDesdeOscuro h2 span"));  
+
+            validacion=true;
+            break;
+          }
+        }
+        
+        if(validacion===false){            
+          const $principalConteiner=document.createElement("div");
+          
+          $principalConteiner.classList.add("follow-user");
+          $principalConteiner.classList.add("border");
+          $principalConteiner.classList.add("medicamento");                
+
+          $principalConteiner.innerHTML=`
+          <div class="follow-user-img">
+        <img src=`+(document.querySelectorAll(".item-catalogo div:nth-of-type(2) div:nth-of-type(2) img")[i].getAttribute("src"))+` />
+      </div>
+      
+     <div class="follow-user-info light-text">
+        <h4>`+$nombreMeidcamento+`</h4>
+        <p><span>0</span> Unidades</p>
+      </div>          
+      
+      <div class="plus">        
+        <i class="fas fa-plus-circle fa-3x agregar" data-nombre="`+$nombreMeidcamento+`" style="margin-top: 10px;"></i>
+        <p class="desagregar" data-nombre="`+$nombreMeidcamento+`">_</p>
+        <i class="fas fa-trash-alt fa-3x eliminar" data-nombre="`+$nombreMeidcamento+`" style="margin-left:5px ;"></i>
+      </div>`;
+
+      let contenedor=document.querySelector(".carritoConteiner");
+      contenedor.insertAdjacentElement("afterend",$principalConteiner);
+                      
+      for(let y=0;y<document.querySelectorAll(".medicamento div:nth-of-type(2) span").length;y++){
+               
+        if(document.querySelectorAll(".medicamento div:nth-of-type(2) h4")[y].textContent===$nombreMeidcamento){
+          incrementar( document.querySelectorAll(".medicamento div:nth-of-type(2) span")[y],$precioMedicamento,
+          document.querySelector(".carritoDesdeOscuro h2 span"));  
+          //  console.log($precioMedicamento)
+        }
+
+      }             
+
+
+                      // console.log("eso es aqui");
+                      // console.log($principalConteiner.childNodes[3].childNodes[1].textContent);
+                      
+          $principalConteiner.addEventListener("click",(e)=>{
+            // console.log(e.target);
+            
+            if(e.target.classList.contains('agregar') && e.target.getAttribute("data-nombre")===$principalConteiner.childNodes[3].childNodes[1].textContent){
+              
+              for(let y=0;y<document.querySelectorAll(".medicamento div:nth-of-type(2) span").length;y++){
+               
+                if(document.querySelectorAll(".medicamento div:nth-of-type(2) h4")[y].textContent===$nombreMeidcamento){
+                  incrementar( document.querySelectorAll(".medicamento div:nth-of-type(2) span")[y],$precioMedicamento,
+                  document.querySelector(".carritoDesdeOscuro h2 span"));  
+                  //  console.log($precioMedicamento)
+                }
+
+              }             
+              
+            }
+            
+            if(e.target.classList.contains('desagregar') 
+            && e.target.getAttribute("data-nombre")===$principalConteiner.childNodes[3].childNodes[1].textContent){
+                
+              for(let y=0;y<document.querySelectorAll(".medicamento div:nth-of-type(2) span").length;y++){
+               
+                if(document.querySelectorAll(".medicamento div:nth-of-type(2) h4")[y].textContent===$nombreMeidcamento){
+                  disminuir(document.querySelectorAll(".medicamento div:nth-of-type(2) span")[y],$precioMedicamento,
+                  document.querySelector(".carritoDesdeOscuro h2 span"));   
+                }
+
+              }
+            }
+            
+            if(e.target.classList.contains('eliminar')
+            && e.target.getAttribute("data-nombre")===$principalConteiner.childNodes[3].childNodes[1].textContent){
+              for(let y=0;y<document.querySelectorAll(".medicamento div:nth-of-type(2) span").length;y++){
+
+                let precioFinal=Math.abs($precioMedicamento)*Math.abs(document.querySelector(".medicamento div:nth-of-type(2) span").textContent)+"";
+                
+                if(document.querySelectorAll(".medicamento div:nth-of-type(2) h4")[y].textContent===$nombreMeidcamento){
+              disminuir(document.querySelectorAll(".medicamento div:nth-of-type(2) span")[y],
+              precioFinal,document.querySelector(".carritoDesdeOscuro h2 span"));  
+              document.querySelectorAll(".medicamento")[y].classList.add("none");
+              document.querySelectorAll(".medicamento")[y].classList.remove("medicamento");
+                }
+              }
+            }
+
+          })
+
+          if(document.querySelectorAll(".medicamento").length>3){
+            document.querySelectorAll(".medicamento")[2].classList.add("none");
+          }
+
+      }
+      }
+
+
+
+    })
+
+
+  }
+
+
+
+  const $ElementosDelCarrito=document.querySelectorAll(".medicamento");
+  
+
+  
+     for(let i=0;i<1;i++){
+      $ElementosDelCarrito[i].addEventListener("click",(e)=>{        
+        
+        console.log(e.target.classList.contains('agregar'));
+        if(e.target.classList.contains('agregar')){
+          console.log(document.querySelector(".carritoDesdeOscuro h2 span"));
+          incrementar(document.querySelectorAll(".medicamento div:nth-of-type(2) span")[document.querySelectorAll(".medicamento").length-1],
+          "100",document.querySelector(".carritoDesdeOscuro h2 span")); 
+          
+        }
+        if(e.target.classList.contains('desagregar')){
+          disminuir(document.querySelectorAll(".medicamento div:nth-of-type(2) span")[document.querySelectorAll(".medicamento").length-1]
+          ,"100",document.querySelector(".carritoDesdeOscuro h2 span")); 
+        }
+
+        if(e.target.classList.contains('eliminar')){
+
+            let precioFinal=Math.abs(100)*Math.abs(document.querySelector(".medicamento div:nth-of-type(2) span").textContent)+"";
+            
+            
+          disminuir(document.querySelectorAll(".medicamento div:nth-of-type(2) span")[document.querySelectorAll(".medicamento").length-1],
+          precioFinal,document.querySelector(".carritoDesdeOscuro h2 span"));  
+          document.querySelectorAll(".medicamento")[document.querySelectorAll(".medicamento").length-1].classList.add("none");
+          document.querySelectorAll(".medicamento")[document.querySelectorAll(".medicamento").length-1].classList.remove("medicamento");
+            
+          
+        }
+
+  
+      })
+     }
+
+
+const $verTodo=document.getElementById("carritoCompleto");
+const $carrito=document.querySelector(".carritoDesdeOscuro");
+
+$verTodo.addEventListener("click",()=>{
+  if($verTodo.textContent==="Salir"){
+    $carrito.classList.remove("follow-carrito");
+    $carrito.classList.add("follow");
+    $verTodo.textContent="Ver todo";
+    if(document.querySelector(".carritoDesdeOscuro footer").classList.contains("none")){
+      document.querySelector(".carritoDesdeOscuro footer").classList.remove("none");
+    }
+    if(document.querySelectorAll(".medicamento").length>3){
+      for(let y=3;y<document.querySelectorAll(".medicamento").length; y++){
+        if(!document.querySelectorAll(".medicamento")[y].classList.contains("none")){
+          document.querySelectorAll(".medicamento")[y].classList.add("none");
+        }      
+      }
+    }
+  }else if($verTodo.textContent==="Ver todo"){
+    $carrito.classList.add("follow-carrito");
+    $carrito.classList.remove("follow");
+    $verTodo.textContent="Salir";
+    document.querySelector(".carritoDesdeOscuro footer").classList.add("none");
+    for(let y=0;y<document.querySelectorAll(".medicamento").length; y++){
+      if(document.querySelectorAll(".medicamento")[y].classList.contains("none")){
+        document.querySelectorAll(".medicamento")[y].classList.remove("none");
+      }      
+    }
+  }
+
+})
+
+
+
+
+
+// <div class="follow-user border medicamento">
+//           <div class="follow-user-img">
+//             <img src="pharmacy/farmaco.jpeg" />
+//           </div>
+          
+//          <div class="follow-user-info light-text">
+//             <h4>Albendazol 15mlg</h4>
+//             <p><span id="unidadUno">4</span> Unidades</p>
+//           </div>
+
+//           <!-- <button type="button" class="follow-btn dark-mode-2">Seguir</button> -->
+          
+//           <div class="plus">
+//             <!-- <img src="pharmacy/plus-circle-solid.svg" style="margin-left:20px;" /> -->
+//             <i id="albendazol" class="fas fa-plus-circle fa-3x" style="margin-top: 10px;"></i>
+//             <p id="resta">_</p>
+//             <i class="fas fa-trash-alt fa-3x" style="margin-left:5px ;"></i>
+//           </div>
+//  </div>
