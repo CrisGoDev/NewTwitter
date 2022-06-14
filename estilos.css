@@ -9,6 +9,7 @@
 
 html {
   font-size: 62.5%;
+  overflow-x: hidden;
 }
 
 body {
@@ -309,6 +310,24 @@ body {
   transition: background-color 0.3s;
 }
 
+.login-form div input:not(.login-form-checkbox) {
+  width: 14rem;
+  height: 3.5rem;
+  margin-bottom: 1rem;
+  border: 0.1rem solid #ddd;
+  border-radius: 0.5rem;
+  padding-left: 1rem;
+  font-size: 1.5rem;
+  transition: background-color 0.3s;
+  margin-right: 0.5rem;
+}
+
+.login-form div:nth-of-type(2) a{
+  color: black;
+}
+.login-form div:nth-of-type(2) a:hover{
+  color: #9e9a9a;
+}
 .login-form input:focus {
   background-color: #d9ebf7;
 }
@@ -1472,3 +1491,46 @@ height: 100vw;
   background-color: white;
   text-align: center;
 }
+
+
+.register-content{
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  background-color: white;
+  margin-left: 15vw;
+  margin-right: 15vw;
+  padding-top: 3rem;
+  padding-left: 3rem;
+  padding-bottom: 3rem;
+}
+
+
+.register-footer {  
+  width: 70vw;
+  background-color: #edf3f7;
+  margin-left: 15vw;
+  margin-right: 15vw;
+  height: 10vh;
+  font-size: 1.5rem;
+  padding-left: 5vw;
+  padding-top: 3vh;
+}
+
+.register-footer p{
+  font-size: 1.6rem;
+  font-weight: 300;
+  margin: 0.5rem 0;
+}
+
+.register-footer a{
+  text-decoration: none;
+  color: var(--color-principal);
+}
+.register-content h2{
+  font-size: 2.4rem;
+  margin-bottom: 3rem;
+}
+
+
+
