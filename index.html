@@ -50,7 +50,7 @@
         <img src="pharmacy/Logo.png" class="logo"alt="">
         <h1>Explore lo que está pasando en el mundo</h1>
         <h4>Forma parte de nuestro portal de noticias</h4>
-        <button type="button" class="sign-up main-btn">Registrate</button>
+        <button type="button" class="sign-up">Registrate</button>
         <button type="button" class="log-in main-btn">Iniciar sesión</button>
       </div>
     </div>
@@ -86,7 +86,7 @@
     <!-- login -->
     <div class="login">
       <div class="login-content">
-        <h2>Iniciar sesión en Twitter</h2>
+        <h2>Iniciar sesión en Farmacia Santini</h2>
         <form class="login-form">
           <input type="text" placeholder="Teléfono, email, usuario" class="login-user-info" />
           <input type="password" placeholder="contraseña" class="login-password" />
@@ -100,10 +100,6 @@
       </div>
       <footer class="login-footer">
         <p>¿Eres Nuevo? <a href="#">Regístrate ahora</a></p>
-        <p>
-          <!-- ¿Ya estás usando Twitter por mensaje de texto? -->
-          <a href="#">Activa tu cuenta</a>
-        </p>
       </footer>
     </div>
     <!-- end of login -->
@@ -477,33 +473,42 @@
   <!-- end of feeds page -->
 
 
+  <section class="register-page none">
+    <nav class="login-page-nav">
+      <ul>
+        <li class="brand">
+          <a href="#"><i class="fab fa-twitter"></i> Home</a>
+        </li>
+        <li><a href="#">Acerca de</a></li>
+        <li><a href="#">Idioma: Español</a></li>
+      </ul>
+    </nav>
+    
 
-  <!-- <section class="page-carrito">
-
-    <div class="follow-carrito dark-mode-1">
-      <h3 class="follow-heading light-text border carritoConteiner">Tu Carrito de compras</h3>
-      <div class="follow-user border medicamento">
-        <div class="follow-user-img">
-          <img src="pharmacy/farmaco.jpeg" />
-        </div>
-        <div class="follow-user-info light-text">
-          <h4>Albendazol 15mlg</h4>
-          <p><span id="unidadUno">4</span> Unidades</p>
-        </div>
-        
-        
-         <div class="plus">
-          <img src="pharmacy/plus-circle-solid.svg" style="margin-left:20px;" />
-          <i class="fas fa-plus-circle fa-3x agregar" data-nombre="Albendazol 15mlg" style="margin-top: 10px;"></i>
-          <p class="desagregar">_</p>
-          <i class="fas fa-trash-alt fa-3x" style="margin-left:5px ;"></i>
-        </div>
+      <div class="register-content">
+        <h2>Crea tu cuenta de Farmacia Santini</h2>
+        <form class="login-form">
+          <div>
+            <input type="text" placeholder="Nombres" class="login-user-info">
+            <input type="text" placeholder="Apellidos" class="login-user-info">
+          </div>          
+          <input type="text" placeholder="Teléfono, email, usuario"/>
+          <input type="password" placeholder="Contraseña" class="login-password" />
+          <input type="password" placeholder="Confirmacion" class="login-password" />
+          <div>
+            <button id="register-btn" type="button" class="login-form-btn">Crear Cuenta</button>
+            <input type="checkbox" class="login-form-checkbox" id="check" />
+            <label for="check">Recordar</label>
+            <a href="#">Accede a tu cuenta en su lugar</a>
+          </div>
+        </form>
+  
       </div>
+      <footer class="register-footer">
+        <p>¿Ya tienes una cuenta? <a href="#">Inicia Sesion ahora</a></p>
+      </footer>      
 
-      <div class="follow-link">
-        <a href="#">Ver todo </a>
-      
-  </section> -->
+  </section>
   <script src="script.js"></script>
 </body>
 

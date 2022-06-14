@@ -1,6 +1,7 @@
 // DOM Elements
 const mainPage = document.querySelector(".main-page");
 const loginPage = document.querySelector(".login-page");
+const $registerPage=document.querySelector(".register-page");
 const middleContent = document.querySelector(".middle-content");
 const btnTop = document.querySelector(".btn-top");
 const newsFeedPage = document.querySelector(".feeds-page");
@@ -364,22 +365,78 @@ $verTodo.addEventListener("click",()=>{
 
 
 
-// <div class="follow-user border medicamento">
-//           <div class="follow-user-img">
-//             <img src="pharmacy/farmaco.jpeg" />
-//           </div>
-          
-//          <div class="follow-user-info light-text">
-//             <h4>Albendazol 15mlg</h4>
-//             <p><span id="unidadUno">4</span> Unidades</p>
-//           </div>
+const goToRegisterPage = () => {
+  mainPage.style.display = "none";
+  $registerPage.style.display = "grid";
+};
 
-//           <!-- <button type="button" class="follow-btn dark-mode-2">Seguir</button> -->
-          
-//           <div class="plus">
-//             <!-- <img src="pharmacy/plus-circle-solid.svg" style="margin-left:20px;" /> -->
-//             <i id="albendazol" class="fas fa-plus-circle fa-3x" style="margin-top: 10px;"></i>
-//             <p id="resta">_</p>
-//             <i class="fas fa-trash-alt fa-3x" style="margin-left:5px ;"></i>
-//           </div>
-//  </div>
+
+const $singUp=document.querySelector(".sign-up");
+
+
+$singUp.addEventListener("click",()=>{
+  goToRegisterPage();
+  loginPage.style.display = "none";
+  // mainPage.style.display = "none";
+  // newsFeedPage.style.display = "block";
+});
+
+function goToHome(){
+  mainPage.style.display = "grid";
+  $registerPage.style.display = "none";
+}
+const $homeSinUp=document.querySelector(".register-page nav ul li:nth-of-type(1)");
+
+$homeSinUp.addEventListener("click",()=>{
+  goToHome();
+});
+
+const $homeSinIn=document.querySelector(".login-page nav ul li:nth-of-type(1)");
+
+$homeSinIn.addEventListener("click",()=>{
+  goToHome();
+});
+
+
+const $contraseñaPerdida=document.querySelector(".login-page div form a");
+
+$contraseñaPerdida.addEventListener("click",()=>{
+
+alert("Se envio un mensaje a tu correo, cambia tu contraseña desde ahi")
+goToHome();
+})
+
+const $registrarseDesdeLogin=document.querySelector(".login-page div footer a");
+
+
+
+$registrarseDesdeLogin.addEventListener("click",()=>{
+goToRegisterPage();  
+// loginPage.classList.add("none");
+loginPage.style.display = "none";
+});
+
+const $botonRegistro=document.querySelector("#register-btn");
+
+$botonRegistro.addEventListener("click",()=>{
+  goToHome();
+})
+
+
+
+const $iniciarSecionDesdeRegistro=document.querySelector(".register-content form div a");
+
+$iniciarSecionDesdeRegistro.addEventListener("click",()=>{
+  goToLoginPage();
+  loginPage.style.display = "grid";
+  $registerPage.style.display = "none";
+})
+
+
+const $accedeDesdeRegister=document.querySelector(".register-page footer a");
+
+
+$accedeDesdeRegister.addEventListener("click",()=>{
+
+goToLoginPage();
+});
