@@ -440,3 +440,76 @@ $accedeDesdeRegister.addEventListener("click",()=>{
 
 goToLoginPage();
 });
+
+//Bucador de los diferentes medicamentos en el catalogo, por nombre y por farmacia
+
+const $inputSearch=document.querySelector(".search-bar-input");
+const $nombresMedicamentos=document.querySelectorAll(".item-catalogo div:nth-of-type(2) span");
+const $nombreFarmacias=document.querySelectorAll(".item-catalogo div:nth-of-type(2) h4");
+const $catagoloItems=document.querySelectorAll(".item-catalogo");
+$inputSearch.addEventListener("keyup",(e)=>{
+
+for(let y=0;y<$catagoloItems.length;y++){
+  if($nombresMedicamentos[y].textContent.toLowerCase().includes($inputSearch.value.toLowerCase()) || 
+  $nombreFarmacias[y].textContent.toLowerCase().includes($inputSearch.value.toLowerCase())){
+    if($catagoloItems[y].classList.contains("none")){
+      $catagoloItems[y].classList.remove("none");
+    }
+  }else{
+    $catagoloItems[y].classList.add("none");
+  }
+}
+
+})
+
+//Modal que muestra los medicamentos con mas detalle
+
+const $imagenesDelModal=document.querySelectorAll(".modal-Page .post-img-small img");
+const $imagenPrincipal=document.querySelector(".modal-Page .post-img img");
+const $contenedorImagenes=document.querySelectorAll(".modal-Page .post-img-small div");
+
+for(let y=0;y<$imagenesDelModal.length;y++){
+
+    $imagenesDelModal[y].addEventListener("click",(e)=>{
+      $imagenPrincipal.setAttribute("src",$imagenesDelModal[y].getAttribute("src"));
+      // alert("No estas entrando")
+      for(let j=0;j<$contenedorImagenes.length;j++){
+          if($contenedorImagenes[j].classList.contains("borde-blanco")){
+            $contenedorImagenes[j].classList.remove("borde-blanco");
+          }
+      }
+      $contenedorImagenes[y].classList.add("borde-blanco");
+    })
+
+}
+
+//Evento para activar el modal
+
+const $iconosEyes=document.querySelectorAll(".item-catalogo .post-icons i:nth-of-type(2)");
+const $nombresFarmacias=document.querySelectorAll(".item-catalogo h4");
+const $nombresProuctos=document.querySelectorAll(".item-catalogo span");
+const $rutasImagenesFarmacias=document.querySelectorAll(".item-catalogo .user-avatar img");
+const $rutasImagenesPrincipal=document.querySelectorAll(".item-catalogo .post-img img");
+const $precio=document.querySelectorAll(".item-catalogo h2 p");
+const $modalPage=document.querySelector(".modal-Page");
+
+for(let y=0;y<$iconosEyes.length;y++){
+    $iconosEyes[y].addEventListener("click",(e)=>{
+        $modalPage.classList.remove("position-relative");
+        document.querySelector(".modal-Page .item-catalogo h4").textContent=$nombreFarmacias[y].textContent;
+        document.querySelector(".modal-Page .item-catalogo span").textContent=$nombresProuctos[y].textContent;
+        document.querySelector(".modal-Page .item-catalogo .user-avatar img").setAttribute("src",$rutasImagenesFarmacias[y].getAttribute("src"));
+        document.querySelector(".modal-Page .item-catalogo .post-img img").setAttribute("src",$rutasImagenesPrincipal[y].getAttribute("src"));
+        document.querySelector(".modal-Page .item-catalogo h2 p").textContent=$precio[y].textContent;
+        document.querySelector(".modal-Page .post-img-small img:nth-of-type(1)").setAttribute("src",$rutasImagenesPrincipal[y].getAttribute("src"));
+    })
+}
+
+const $cierreModal=document.querySelector(".modal-Page i");
+
+$cierreModal.addEventListener("click",(e)=>{
+    $modalPage.classList.add("position-relative");
+});
+
+
+
